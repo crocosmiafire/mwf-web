@@ -5,7 +5,7 @@
         <Background v-for="(item, index) in imgs" :key="index" :cur-img="curImg" :pimg="item" />
       </div>
       <div class="header-wrapper">
-        <h1>Melbourne<br>Winter Fest</h1>
+        <img class="main-logo" src="@/assets/Logo-var2op2.svg">
         <h2>28 June - 4 July</h2>
         <div class="instant-nav-btns">
           <div class="nav-btn">
@@ -52,7 +52,7 @@
         <div class="bg-thing" />
       </div>
     </section>
-    <!-- <section class="schedule">
+    <section class="schedule">
       <svg
         id="poly1"
         width="0"
@@ -75,9 +75,13 @@
         </g>
       </svg>
       <div class="schedule-inner">
-        <h1>yeah</h1>
+        <h1>Upcoming Events</h1>
+        <div class="cards-container">
+          <ScheduleCards v-for="item in events" :key="item.id" :info="item" />
+        </div>
       </div>
-    </section> -->
+    </section>
+    <Footer />
   </div>
 </template>
 
@@ -90,7 +94,34 @@ export default {
         'https://cdn.concreteplayground.com/content/uploads/2017/05/Queen-Victoria-Market-Winter-Night.jpeg',
         'http://theluxtraveller.com/wp-content/uploads/2015/06/Melbourne-at-night.jpg'
       ],
-      curImg: 0
+      curImg: 0,
+      events: [
+        {
+          title: 'An event title',
+          time: '09:00',
+          id: 'evt-1'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          id: 'evt-2'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          id: 'evt-3'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          id: 'evt-4'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          id: 'evt-5'
+        }
+      ]
     }
   },
   mounted () {
@@ -113,8 +144,8 @@ export default {
 }
 
 .about {
-  position: relative;
-  bottom: 225px;
+  position: absolute;
+  top: 400px;
   z-index: 1;
 
   .lmao {
@@ -153,6 +184,7 @@ export default {
       font-family: var(--header);
       font-size: 4em;
       letter-spacing: -0.03em;
+      font-weight: normal;
     }
 
     p {
@@ -165,21 +197,47 @@ export default {
 }
 
 .schedule {
-  position: relative;
+  position: absolute;
+  top: 1350px;
   z-index: 1;
+
+  width: 100%;
 
   .schedule-inner {
     width: 100%;
     height: 500px;
-    background: black;
+    background: linear-gradient(#262262, #00A79D);
     color: white;
 
-    padding: 350px 0px;
+    padding: 270px 0px 450px;
 
     clip-path: url(#poly2clip);
 
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 4em;
+      font-family: var(--header);
+      letter-spacing: -0.03em;
+      font-weight: normal;
+    }
+
+    .cards-container {
+      margin-top: 40px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+      overflow-x: auto;
+
+      width: 100%;
+      min-height: 600px;
+    }
   }
 }
 
@@ -226,6 +284,13 @@ export default {
     font-family: var(--header);
     font-weight: normal;
     letter-spacing: -0.03em;
+  }
+
+  .main-logo {
+    filter: brightness(10);
+    width: 400px;
+    height: auto;
+    margin-bottom: 40px;
   }
 
   .instant-nav-btns {

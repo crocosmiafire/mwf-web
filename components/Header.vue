@@ -1,7 +1,7 @@
 <template>
   <div class="header-root" :class="scrollBG">
     <section class="left">
-      <h3>Melbourne Winter Fest</h3>
+      <img class="main-logo" src="@/assets/Logo-var2op2.svg">
     </section>
     <section>
       <div class="links">
@@ -33,7 +33,7 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 400) {
         this.isScroll = true
       } else {
         this.isScroll = false
@@ -46,7 +46,7 @@ export default {
 <style lang="scss" scoped>
 .header-root {
   width: 100%;
-  height: 65px;
+  height: 90px;
   background: transparent;
   padding: 20px 30px;
 
@@ -58,7 +58,13 @@ export default {
   z-index: 2;
 
   transition: 0.25s;
-  transition-property: color, background;
+  transition-property: color, background, opacity;
+}
+
+.main-logo {
+  height: 50px;
+  width: auto;
+  opacity: 0;
 }
 
 .header-root.scroll {
@@ -69,6 +75,10 @@ export default {
 
   a {
     color: black;
+  }
+
+  .main-logo {
+    opacity: 1;
   }
 }
 

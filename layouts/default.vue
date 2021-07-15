@@ -10,8 +10,16 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap');
+
+:root {
+  --header: 'Domine', 'Inter', sans-serif;
+}
+
 html {
   font-family:
+    'Barlow',
     'Inter',
     'Source Sans Pro',
     -apple-system,
@@ -28,6 +36,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *,

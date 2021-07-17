@@ -6,22 +6,25 @@
       </div>
       <div class="header-wrapper">
         <img class="main-logo" src="@/assets/Logo-var2op2.svg">
-        <h2>28 June - 4 July</h2>
-        <div class="instant-nav-btns">
-          <div class="nav-btn">
-            <a href="#">Book Tickets</a>
-          </div>
-          <div class="nav-btn">
-            <a href="#">See Schedule</a>
+        <div class="info-header">
+          <h2>28 June - 4 July</h2>
+          <div class="instant-nav-btns">
+            <div class="nav-btn">
+              <a href="#">Book Tickets</a>
+            </div>
+            <div class="nav-btn">
+              <a href="#">See Schedule</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section class="about">
       <div class="lmao">
-        <div class="about-inner" id="About">
+        <div id="About" class="about-inner">
           <h1>The ultimate Melbourne festival</h1>
           <p>
+            [PLACEHOLDER TEXT]
             Experience Melbourne like you've never experienced it before.
             From cafes and restaurants, to the Sidney Myer Music Bowl, everyone is celebrating this
             uniquely wonderful city.
@@ -101,11 +104,11 @@ export default {
   align-items: center;
   justify-content: flex-end;
 
-  width: 105%;
-  max-height: 800px;
+  width: 100%;
+  max-height: 650px;
   background-color: white;
 
-  transform: rotate(3deg) translateX(-3%);
+  transform: skewY(3deg);
   overflow: hidden;
 
   .lmao {
@@ -115,13 +118,15 @@ export default {
 
     display: flex;
     justify-content: space-between;
-    transform: rotate(-3deg);
+    align-items: center;
+    transform: skewY(-3deg);
 
     overflow: hidden;
 
     .about-inner {
-      padding: 125px 0px 0px 125px;
+      padding-left: 125px;
       width: 50%;
+      margin-bottom: 50px;
     }
 
     .bg-thing {
@@ -141,6 +146,7 @@ export default {
       font-size: 4em;
       letter-spacing: -0.03em;
       font-weight: normal;
+      margin-top: 0px;
     }
 
     p {
@@ -160,17 +166,17 @@ export default {
 .schedule {
   z-index: 1;
 
-  width: 105%;
+  width: 100%;
 
-  transform: rotate(3deg) translateX(-3%);
+  transform: skewY(3deg);
   background: linear-gradient(#262262, #00A79D);
   color: white;
 
   .schedule-inner {
-    width: 100vw;
+    width: 100%;
     height: 500px;
 
-    transform: rotate(-3deg) translateX(3%);
+    transform: skewY(-3deg);
     padding: 170px 0px 350px;
 
     clip-path: url(#poly2clip);
@@ -228,6 +234,19 @@ export default {
 
 .header-wrapper {
   padding: 0px 15%;
+  display: flex;
+  align-items: center;
+
+  .info-header {
+    margin-left: 80px;
+    margin-top: 25px;
+
+    h2 {
+      font-size: 44px;
+
+      margin: 0;
+    }
+  }
 }
 
 .header {
@@ -236,7 +255,8 @@ export default {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  //text-align: center;
   padding-top: 40px;
 
   transition: 0.5s;
@@ -250,13 +270,12 @@ export default {
 
   .main-logo {
     filter: brightness(10);
-    width: 400px;
+    width: 500px;
     height: auto;
-    margin-bottom: 40px;
   }
 
   .instant-nav-btns {
-    margin-top: 40px;
+    margin-top: 20px;
 
     display: flex;
     flex-direction: column;

@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 .card-root {
   min-width: 500px;
-  height: 250px;
+  height: 350px;
   background: white;
   color: black;
   border-radius: 10px;
@@ -46,7 +46,7 @@ export default {
 
     h1 {
       font-size: 28px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Barlow', 'Inter', sans-serif;
       font-weight: bold;
     }
 

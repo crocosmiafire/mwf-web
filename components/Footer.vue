@@ -1,7 +1,9 @@
 <template>
   <section class="footer">
     <div class="left">
-      <h2 class="fancy">Melbourne<br>Winter Fest</h2>
+      <h2 class="fancy">
+        Melbourne<br>Winter Fest
+      </h2>
     </div>
     <div class="right">
       <div class="link-grid">

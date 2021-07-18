@@ -1,10 +1,13 @@
 <template>
   <div class="card-root">
     <div class="card-title">
-      <h1>An Event Title</h1>
-      <span><i class="material-icons">schedule</i> 20:30</span>
+      <div>
+        <h1>{{ info.title }}</h1>
+        <span><i class="material-icons">place</i> {{ info.location }}</span>
+      </div>
+      <span><i class="material-icons">schedule</i> {{ info.time }}</span>
     </div>
-    <div class="evt-image">Image goes here</div>
+    <div class="evt-image" />
   </div>
 </template>
 
@@ -27,16 +30,17 @@ export default {
   grid-template-areas:
   "title"
   "image";
-  grid-template-rows: 20% 1fr;
+  grid-template-rows: 1.5fr 4fr;
 
   overflow: hidden;
 
   margin: 0px 20px;
+  user-select: none;
 
   .card-title {
     grid-area: title;
     justify-self: start;
-    align-self: flex-end;
+    align-self: center;
     padding: 0px 25px;
 
     display: flex;
@@ -48,6 +52,7 @@ export default {
       font-size: 28px;
       font-family: 'Barlow', 'Inter', sans-serif;
       font-weight: bold;
+      margin-bottom: 5px;
     }
 
     span {
@@ -65,10 +70,10 @@ export default {
     background-size: cover;
 
     width: calc(100% - 50px);
-    height: calc(100% - 50px);
+    height: calc(100% - 25px);
 
     border-radius: 8px;
-    margin: 25px;
+    margin: 0px 25px 25px;
 
     align-self: center;
     justify-self: center;

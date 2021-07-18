@@ -36,7 +36,15 @@
     <section class="schedule">
       <div class="schedule-inner">
         <h1>Upcoming Events</h1>
-        <div class="cards-container">
+        <div
+          ref="cards"
+          class="cards-container"
+          :style="cursorChange"
+          @mousedown="startDrag"
+          @mousemove="dragging"
+          @mouseup="stopDrag"
+          @mouseleave="stopDrag"
+        >
           <ScheduleCards v-for="item in events" :key="item.id" :info="item" />
         </div>
       </div>
@@ -59,29 +67,44 @@ export default {
         {
           title: 'An event title',
           time: '09:00',
+          location: 'Somewhere',
           id: 'evt-1'
         },
         {
           title: 'An event title',
           time: '09:00',
+          location: 'Somewhere',
           id: 'evt-2'
         },
         {
           title: 'An event title',
           time: '09:00',
+          location: 'Somewhere',
           id: 'evt-3'
         },
         {
           title: 'An event title',
           time: '09:00',
+          location: 'Somewhere',
           id: 'evt-4'
         },
         {
           title: 'An event title',
           time: '09:00',
+          location: 'Somewhere',
           id: 'evt-5'
         }
-      ]
+      ],
+      isMouseDown: false
+    }
+  },
+  computed: {
+    cursorChange () {
+      if (this.isMouseDown) {
+        return 'cursor: grabbing'
+      } else {
+        return ''
+      }
     }
   },
   mounted () {
@@ -92,6 +115,19 @@ export default {
         this.curImg++
       }
     }, 5000)
+  },
+  methods: {
+    startDrag () {
+      this.isMouseDown = true
+    },
+    dragging (evt) {
+      if (this.isMouseDown) {
+        this.$refs.cards.scrollLeft -= evt.movementX
+      }
+    },
+    stopDrag () {
+      this.isMouseDown = false
+    }
   }
 }
 </script>
@@ -168,21 +204,23 @@ export default {
 
   width: 100%;
 
+  padding: 100px 0px;
+
   transform: skewY(3deg);
   background: linear-gradient(#262262, #00A79D);
   color: white;
 
   .schedule-inner {
     width: 100%;
-    height: 500px;
+    height: 600px;
 
     transform: skewY(-3deg);
-    padding: 170px 0px 350px;
 
     clip-path: url(#poly2clip);
 
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 
     h1 {
@@ -193,18 +231,29 @@ export default {
     }
 
     .cards-container {
-      margin-top: 40px;
+      margin-top: 60px;
+      padding-bottom: 30px;
 
       display: flex;
 
-      align-items: center;
-      justify-content: center;
+      //align-items: center;
+      justify-content: flex-start;
 
       overflow: hidden;
       overflow-x: auto;
 
       width: 100%;
-      min-height: 600px;
+      cursor: grab;
+    }
+
+    .cards-container::-webkit-scrollbar {
+      background: transparent;
+      height: 10px;
+    }
+
+    .cards-container::-webkit-scrollbar-thumb {
+      background: #ffffff8e;
+      border-radius: 20px;
     }
   }
 }

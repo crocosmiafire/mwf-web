@@ -19,20 +19,6 @@
         </div>
       </div>
     </section>
-    <section class="about">
-      <div class="lmao">
-        <div id="About" class="about-inner">
-          <h1>The ultimate Melbourne festival</h1>
-          <p>
-            [PLACEHOLDER TEXT]
-            Experience Melbourne like you've never experienced it before.
-            From cafes and restaurants, to the Sidney Myer Music Bowl, everyone is celebrating this
-            uniquely wonderful city.
-          </p>
-        </div>
-        <div class="bg-thing" />
-      </div>
-    </section>
     <section class="schedule">
       <div class="schedule-inner">
         <h1>Upcoming Events</h1>
@@ -47,6 +33,20 @@
         >
           <ScheduleCards v-for="item in events" :key="item.id" :info="item" />
         </div>
+      </div>
+    </section>
+    <section class="about">
+      <div class="lmao">
+        <div id="About" class="about-inner">
+          <h1>The largest festival ever held in Melbourne</h1>
+          <p>
+            [PLACEHOLDER TEXT]
+            Experience Melbourne like you've never experienced it before.
+            From cafes and restaurants, to the Sidney Myer Music Bowl, everyone is celebrating this
+            uniquely wonderful city.
+          </p>
+        </div>
+        <div class="bg-thing" />
       </div>
     </section>
     <Footer />
@@ -212,7 +212,7 @@ export default {
 
   .schedule-inner {
     width: 100%;
-    height: 600px;
+    height: 410px;
 
     transform: skewY(-3deg);
 
@@ -224,7 +224,7 @@ export default {
     flex-direction: column;
 
     h1 {
-      font-size: 4em;
+      font-size: 3.5em;
       font-family: var(--header);
       letter-spacing: -0.03em;
       font-weight: normal;
@@ -232,7 +232,7 @@ export default {
 
     .cards-container {
       margin-top: 60px;
-      padding-bottom: 30px;
+      padding-bottom: 40px;
 
       display: flex;
 
@@ -244,16 +244,26 @@ export default {
 
       width: 100%;
       cursor: grab;
+
     }
 
     .cards-container::-webkit-scrollbar {
       background: transparent;
       height: 10px;
+      display: none;
     }
 
     .cards-container::-webkit-scrollbar-thumb {
       background: #ffffff8e;
       border-radius: 20px;
+    }
+
+    .cards-container:hover::-webkit-scrollbar {
+      display: block;
+    }
+
+    .cards-container:hover {
+      padding-bottom: 30px;
     }
   }
 }
@@ -291,7 +301,7 @@ export default {
     margin-top: 25px;
 
     h2 {
-      font-size: 44px;
+      font-size: 52px;
 
       margin: 0;
     }
@@ -300,7 +310,7 @@ export default {
 
 .header {
   width: 100%;
-  height: 650px;
+  height: 550px;
   color: white;
   display: flex;
   align-items: center;

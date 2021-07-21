@@ -19,8 +19,8 @@ export default {
 
 <style lang="scss" scoped>
 .card-root {
-  min-width: 500px;
-  height: 350px;
+  min-width: 425px;
+  height: 250px;
   background: white;
   color: black;
   border-radius: 10px;
@@ -30,7 +30,7 @@ export default {
   grid-template-areas:
   "title"
   "image";
-  grid-template-rows: 1.5fr 4fr;
+  grid-template-rows: 2.1fr 4fr;
 
   overflow: hidden;
 
@@ -49,10 +49,10 @@ export default {
     width: 100%;
 
     h1 {
-      font-size: 28px;
+      font-size: 26px;
       font-family: 'Barlow', 'Inter', sans-serif;
-      font-weight: bold;
-      margin-bottom: 5px;
+      font-weight: 600;
+      margin-bottom: 6px;
     }
 
     span {
@@ -62,6 +62,7 @@ export default {
 
     i {
       margin-right: 7px;
+      font-size: 22px;
     }
   }
 
@@ -69,11 +70,8 @@ export default {
     background-image: url('http://theluxtraveller.com/wp-content/uploads/2015/06/Melbourne-at-night.jpg');
     background-size: cover;
 
-    width: calc(100% - 50px);
-    height: calc(100% - 25px);
-
-    border-radius: 8px;
-    margin: 0px 25px 25px;
+    width: 105%;
+    height: 105%;
 
     align-self: center;
     justify-self: center;

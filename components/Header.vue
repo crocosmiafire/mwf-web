@@ -5,10 +5,10 @@
     </section>
     <section>
       <div class="links">
-        <a href="#About">About</a>
-        <a href="#Book">Book</a>
         <a href="#Schedule">Schedule</a>
-        <a href="#Maps">Maps</a>
+        <a href="#Book">Book</a>
+        <a href="#Maps">Map</a>
+        <a href="#About">About</a>
         <a href="#FAQ">FAQ</a>
       </div>
     </section>
@@ -56,6 +56,7 @@ export default {
   align-items: center;
   color: white;
   z-index: 2;
+  font-size: 1.1em;
 
   transition: 0.25s;
   transition-property: color, background, opacity;

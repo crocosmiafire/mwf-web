@@ -19,25 +19,29 @@
         </div>
       </div>
     </section>
-    <section class="schedule">
+    <section id="Schedule" class="schedule">
       <div class="schedule-inner">
         <h1>Upcoming Events</h1>
-        <div
-          ref="cards"
-          class="cards-container"
-          :style="cursorChange"
-          @mousedown="startDrag"
-          @mousemove="dragging"
-          @mouseup="stopDrag"
-          @mouseleave="stopDrag"
-        >
-          <ScheduleCards v-for="item in events" :key="item.id" :info="item" />
+        <div class="events-wrapper">
+          <!-- <div class="fade left" /> -->
+          <div
+            ref="cards"
+            class="cards-container"
+            :style="cursorChange"
+            @mousedown="startDrag"
+            @mousemove="dragging"
+            @mouseup="stopDrag"
+            @mouseleave="stopDrag"
+          >
+            <ScheduleCards v-for="item in events" :key="item.id" :info="item" />
+          </div>
+          <!-- <div class="fade right" /> -->
         </div>
       </div>
     </section>
-    <section class="about">
+    <section id="About" class="about">
       <div class="lmao">
-        <div id="About" class="about-inner">
+        <div class="about-inner">
           <h1>The largest festival ever held in Melbourne</h1>
           <p>
             [PLACEHOLDER TEXT]
@@ -230,40 +234,65 @@ export default {
       font-weight: normal;
     }
 
-    .cards-container {
-      margin-top: 60px;
-      padding-bottom: 40px;
-
+    .events-wrapper {
       display: flex;
-
-      //align-items: center;
-      justify-content: flex-start;
-
-      overflow: hidden;
-      overflow-x: auto;
-
       width: 100%;
-      cursor: grab;
+      align-items: center;
+      justify-content: center;
 
-    }
+      .fade {
+        width: 100px;
+        height: 680px;
+        background: red;
 
-    .cards-container::-webkit-scrollbar {
-      background: transparent;
-      height: 10px;
-      display: none;
-    }
+        position: absolute;
+        pointer-events: none;
+      }
 
-    .cards-container::-webkit-scrollbar-thumb {
-      background: #ffffff8e;
-      border-radius: 20px;
-    }
+      .fade.left {
+        left: 0;
+      }
 
-    .cards-container:hover::-webkit-scrollbar {
-      display: block;
-    }
+      .fade.right {
+        right: 0;
+      }
 
-    .cards-container:hover {
-      padding-bottom: 30px;
+      .cards-container {
+        padding: 0px 20px;
+        margin-top: 60px;
+        padding-bottom: 40px;
+
+        display: flex;
+
+        //align-items: center;
+        justify-content: flex-start;
+
+        overflow: hidden;
+        overflow-x: auto;
+
+        width: 100%;
+        cursor: grab;
+
+      }
+
+      .cards-container::-webkit-scrollbar {
+        background: transparent;
+        height: 10px;
+        display: none;
+      }
+
+      .cards-container::-webkit-scrollbar-thumb {
+        background: #ffffff8e;
+        border-radius: 20px;
+      }
+
+      .cards-container:hover::-webkit-scrollbar {
+        display: block;
+      }
+
+      .cards-container:hover {
+        padding-bottom: 30px;
+      }
     }
   }
 }

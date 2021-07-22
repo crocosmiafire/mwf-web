@@ -62,9 +62,8 @@ export default {
   data () {
     return {
       imgs: [
-        'https://summersoundsfestival.com/content/uploads/sites/2/2021/01/138946391_3877321168999287_6162802858430709152_o-3000x0-c-default.jpg',
-        'https://cdn.concreteplayground.com/content/uploads/2017/05/Queen-Victoria-Market-Winter-Night.jpeg',
-        'http://theluxtraveller.com/wp-content/uploads/2015/06/Melbourne-at-night.jpg'
+        '/imgs/hosier-lane-front.jpg',
+        '/imgs/flinders-front.jpg'
       ],
       curImg: 0,
       events: [

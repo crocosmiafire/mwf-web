@@ -11,14 +11,15 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Manrope:wght@400;800&display=swap');
 
 :root {
-  --header: 'Domine', 'Inter', sans-serif;
+  --header: 'Krona One', 'Domine', 'Inter', sans-serif;
 }
 
 html {
   font-family:
+    'Manrope',
     'Barlow',
     'Inter',
     'Source Sans Pro',

@@ -41,16 +41,20 @@
     </section>
     <section id="About" class="about">
       <div class="lmao">
-        <div class="about-inner">
-          <h1>The largest festival ever held in Melbourne</h1>
-          <p>
-            [PLACEHOLDER TEXT]
-            Experience Melbourne like you've never experienced it before.
-            From cafes and restaurants, to the Sidney Myer Music Bowl, everyone is celebrating this
-            uniquely wonderful city.
-          </p>
+        <div class="about-wrap">
+          <div class="about-inner">
+            <h1>The largest festival ever held in Melbourne</h1>
+            <p>
+              [PLACEHOLDER TEXT]
+              Experience Melbourne like you've never experienced it before.
+              From cafes and restaurants, to the Sidney Myer Music Bowl, everyone is celebrating this
+              uniquely wonderful city.
+            </p>
+          </div>
         </div>
-        <div class="bg-thing" />
+        <div class="bg-thing-wrap">
+          <div class="bg-thing" />
+        </div>
       </div>
     </section>
     <Footer />
@@ -147,7 +151,7 @@ export default {
   max-height: 650px;
   background-color: white;
 
-  transform: skewY(3deg);
+  transform: skewY(0deg);
   overflow: hidden;
 
   .lmao {
@@ -158,39 +162,50 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transform: skewY(-3deg);
+    //transform: skewY(-3deg);
 
     overflow: hidden;
 
-    .about-inner {
-      padding-left: 125px;
-      width: 50%;
-      margin-bottom: 50px;
+    .about-wrap {
+      align-self: center;
+      justify-self: center;
+      transform: skewX(-15deg);
     }
-
-    .bg-thing {
+    .about-inner {
+      grid-area: about;
+      margin-bottom: 50px;
+      transform: skewX(15deg);
+      padding: 0px 10px 0px 70px;
+    }
+    .bg-thing-wrap {
+      grid-area: bgthing;
+      height: 100%;
+      width: 100%;
       position: relative;
       z-index: -1;
-
-      height: 100%;
-      width: 45%;
-
+      align-self: flex-end;
+      justify-self: end;
+      transform: skewX(-15deg) translateX(100px);
+      overflow: hidden;
+    }
+    .bg-thing {
+      height: 120%;
+      width: 120%;
+      transform: skewX(15deg) translateX(-100px);
       background-image: url('https://www.webjet.com.au/travel/wp-content/uploads/2014/07/Melbourne_at_night.jpg');
       background-size: cover;
       background-position: right;
     }
-
     h1 {
       font-family: var(--header);
-      font-size: 4em;
+      font-size: 3.6em;
       letter-spacing: -0.03em;
       font-weight: normal;
       margin-top: 0px;
     }
-
     p {
       margin-top: 25px;
-      font-size: 1.5em;
+      font-size: 1.4em;
       padding-right: 20px;
       line-height: 1.45em;
     }
@@ -209,7 +224,7 @@ export default {
 
   padding: 100px 0px;
 
-  transform: skewY(3deg);
+  transform: skewY(0deg);
   background: linear-gradient(#262262, #00A79D);
   color: white;
 
@@ -217,7 +232,7 @@ export default {
     width: 100%;
     height: 410px;
 
-    transform: skewY(-3deg);
+    //transform: skewY(-3deg);
 
     clip-path: url(#poly2clip);
 
@@ -371,9 +386,13 @@ export default {
       margin-bottom: 10px;
 
       a {
-        color: #9ac3ff;
+        color: #70c6ff;
         text-decoration: none;
         font-size: 1.6em;
+      }
+
+      a:hover {
+        text-decoration: underline;
       }
 
       a:after {

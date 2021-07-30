@@ -50,7 +50,7 @@ export default {
 
     h1 {
       font-size: 26px;
-      font-family: 'Barlow', 'Inter', sans-serif;
+      font-family: 'Manrope', 'Barlow', 'Inter', sans-serif;
       font-weight: 600;
       margin-bottom: 6px;
     }

@@ -33,7 +33,7 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 150) {
         this.isScroll = true
       } else {
         this.isScroll = false
@@ -46,7 +46,7 @@ export default {
 <style lang="scss" scoped>
 .header-root {
   width: 100%;
-  height: 90px;
+  height: 80px;
   background: transparent;
   padding: 20px 30px;
 
@@ -63,7 +63,7 @@ export default {
 }
 
 .main-logo {
-  height: 50px;
+  height: 40px;
   width: auto;
   opacity: 0;
 }
@@ -76,6 +76,7 @@ export default {
 
   a {
     color: black;
+    font-size: 1.05em;
   }
 
   .main-logo {

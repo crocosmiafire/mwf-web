@@ -5,7 +5,7 @@
         <Background v-for="(item, index) in imgs" :key="index" :cur-img="curImg" :pimg="item" />
       </div>
       <div class="header-wrapper">
-        <img class="main-logo" src="@/assets/Logo-var2op2.svg">
+        <img class="main-logo" src="@/assets/Logo-var2op3.svg">
         <div class="info-header">
           <h2>28 June - 4 July</h2>
           <div class="instant-nav-btns">

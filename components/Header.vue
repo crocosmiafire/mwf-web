@@ -1,7 +1,7 @@
 <template>
   <div class="header-root" :class="scrollBG">
     <section class="left">
-      <img class="main-logo" src="@/assets/Logo-var2op2.svg">
+      <img class="main-logo" src="@/assets/Logo-var2op3.svg">
     </section>
     <section>
       <div class="links">

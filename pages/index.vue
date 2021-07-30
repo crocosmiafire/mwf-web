@@ -30,7 +30,7 @@
             :style="cursorChange"
             @mousedown="startDrag"
             @mousemove="dragging"
-            @mouseup="stopDrag"
+            @pointerup="stopDrag"
             @mouseleave="stopDrag"
           >
             <ScheduleCards v-for="item in events" :key="item.id" :info="item" />
@@ -100,6 +100,150 @@ export default {
           time: '09:00',
           location: 'Somewhere',
           id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
+        },
+        {
+          title: 'An event title',
+          time: '09:00',
+          location: 'Somewhere',
+          id: 'evt-5'
         }
       ],
       isMouseDown: false
@@ -132,8 +276,26 @@ export default {
         this.$refs.cards.scrollLeft -= evt.movementX
       }
     },
-    stopDrag () {
+    stopDrag (evt) {
+      let toStopAt = 0
+      // 465px width
+      for (let i = 0; i < this.events.length; i++) {
+        const cardEl = document.querySelector('.cards-container').children[i].getBoundingClientRect()
+        if (cardEl.x < -440) {
+          continue
+        } else if (cardEl.x >= -192) {
+          toStopAt = i + 1
+          break
+        } else if (cardEl.x < -193) {
+          toStopAt = i + 2
+          break
+        }
+      }
       this.isMouseDown = false
+      this.$refs.cards.scrollTo({
+        left: 465 * toStopAt - 465,
+        behavior: 'smooth'
+      })
     }
   }
 }

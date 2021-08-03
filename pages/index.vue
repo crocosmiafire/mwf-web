@@ -23,7 +23,9 @@
       <div class="schedule-inner">
         <h1>Upcoming Events</h1>
         <div class="events-wrapper">
-          <!-- <div class="fade left" /> -->
+          <div class="fade left">
+            <i class="material-icons">arrow_back_ios</i>
+          </div>
           <div
             ref="cards"
             class="cards-container"
@@ -35,7 +37,9 @@
           >
             <ScheduleCards v-for="item in events" :key="item.id" :info="item" />
           </div>
-          <!-- <div class="fade right" /> -->
+          <div class="fade right">
+            <i class="material-icons">arrow_forward_ios</i>
+          </div>
         </div>
       </div>
     </section>
@@ -413,24 +417,44 @@ export default {
     .events-wrapper {
       display: flex;
       width: 100%;
+      height: 100%;
       align-items: center;
       justify-content: center;
 
       .fade {
         width: 100px;
         height: 680px;
-        background: red;
 
         position: absolute;
         pointer-events: none;
+
+        display: flex;
+        align-items: center;
+
+        i {
+          font-size: 3.5em;
+          text-shadow: 0px 2px 8px rgb(0,0,0);
+          pointer-events: all;
+          cursor: pointer;
+
+          /* padding: 30px 20px;
+          background: rgba(0,0,0,.25);
+          border-radius: 20px; */
+        }
+
+        i:hover {
+          opacity: 0.75;
+        }
       }
 
       .fade.left {
         left: 0;
+        justify-content: flex-end;
       }
 
       .fade.right {
         right: 0;
+        justify-content: flex-start;
       }
 
       .cards-container {

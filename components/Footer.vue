@@ -1,42 +1,56 @@
 <template>
-  <section class="footer">
-    <div class="inner">
-      <div class="left">
-        <img class="main-logo" src="@/assets/Logo-var2op2.svg">
-      </div>
-      <div class="right">
-        <div class="link-grid">
-          <div class="field-main">
-            <h3>yo</h3>
-            <a>Home</a>
-          </div>
+  <div class="root">
+    <section class="footer">
+      <div class="inner">
+        <div />
+        <p class="disc">
+          This website is a concept and is not indicative of any real-life events.<br>The City of Melbourne and Victorian Government do not endorse this website.
+        </p>
+        <div>
+          <img class="com-logo" src="@/assets/com.svg">
+          <img class="com-logo" src="@/assets/vicgov.png">
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>
+div.root {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to left, #262262, #00A79D);
+}
+
 .footer {
   width: 100%;
-  height: 200px;
-  padding: 20px 30px;
+  height: 130px;
+  padding: 20px 75px;
 
-  transform: skewY(3deg);
+  background: linear-gradient(to left, #262262, #00A79D);
+  color: white;
+
+  transform: skewY(-4deg) translateY(-65px);
 }
 
 .inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  transform: skewY(-3deg);
+  align-items: flex-end;
+  transform: skewY(4deg) translateY(40px);
 
   width: 100%;
-  height: 100%;
 }
 
-.left img {
+.disc {
+  position: absolute;
+  margin: 0;
+  font-size: 12px;
+}
+
+.com-logo {
   height: 50px;
   width: auto;
+  margin-left: 50px;
 }
 </style>

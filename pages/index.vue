@@ -396,7 +396,7 @@ export default {
 
   .schedule-inner {
     width: 100%;
-    height: 410px;
+    height: 350px;
 
     //transform: skewY(-3deg);
 
@@ -410,7 +410,7 @@ export default {
     h1 {
       font-size: 3.5em;
       font-family: var(--header);
-      letter-spacing: -0.03em;
+      letter-spacing: -0.04em;
       font-weight: normal;
     }
 
@@ -502,7 +502,7 @@ export default {
   width: 100%;
   height: 740px;
   z-index: -1;
-  filter: brightness(0.3);
+  filter: brightness(0.5);
   top: 0;
   overflow: hidden;
 
@@ -548,6 +548,7 @@ export default {
   padding-top: 40px;
 
   transition: 0.5s;
+  //text-shadow: 0px 1px 10px rgba(0,0,0,0.9);
 
   h1 {
     font-size: 4.5em;

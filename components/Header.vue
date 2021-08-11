@@ -76,7 +76,6 @@ export default {
 
   a {
     color: black;
-    font-size: 1.05em;
   }
 
   .main-logo {

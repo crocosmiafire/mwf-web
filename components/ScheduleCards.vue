@@ -70,11 +70,14 @@ export default {
     background-image: url('http://theluxtraveller.com/wp-content/uploads/2015/06/Melbourne-at-night.jpg');
     background-size: cover;
 
-    width: 105%;
-    height: 105%;
-
+    background-size: cover;
+    width: 100%;
+    height: 100%;
     align-self: center;
     justify-self: center;
+    border: solid white 7px;
+    box-sizing: border-box;
+    border-radius: 0px 0px 12px 12px;
   }
 }
 </style>

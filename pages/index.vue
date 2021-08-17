@@ -61,6 +61,24 @@
         </div>
       </div>
     </section>
+    <section class="about a2">
+      <div class="lmao">
+        <div class="about-wrap">
+          <div class="about-inner">
+            <h1>The largest festival ever held in Melbourne</h1>
+            <p>
+              [PLACEHOLDER TEXT]
+              Experience Melbourne like you've never experienced it before.
+              From cafes and restaurants, to the Sidney Myer Music Bowl, everyone is celebrating this
+              uniquely wonderful city.
+            </p>
+          </div>
+        </div>
+        <div class="bg-thing-wrap">
+          <div class="bg-thing" />
+        </div>
+      </div>
+    </section>
     <Footer />
   </div>
 </template>
@@ -374,6 +392,16 @@ export default {
       font-size: 1.4em;
       padding-right: 20px;
       line-height: 1.45em;
+    }
+  }
+}
+
+.about.a2 {
+  .lmao {
+    flex-direction: row-reverse;
+
+    .bg-thing {
+      transform: translateX(100px) skew(15deg);
     }
   }
 }

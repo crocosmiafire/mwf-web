@@ -61,7 +61,7 @@
         </div>
       </div>
     </section>
-    <section class="about a2">
+    <!-- <section class="about a2">
       <div class="lmao">
         <div class="about-wrap">
           <div class="about-inner">
@@ -78,7 +78,7 @@
           <div class="bg-thing" />
         </div>
       </div>
-    </section>
+    </section> -->
     <Footer />
   </div>
 </template>

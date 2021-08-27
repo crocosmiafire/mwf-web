@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'mwf',
+    title: 'Melbourne Winter Festival',
     htmlAttrs: {
       lang: 'en'
     },
@@ -44,5 +44,11 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  target: 'static',
+
+  router: {
+    base: '/'
   }
 }

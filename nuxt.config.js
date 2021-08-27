@@ -49,6 +49,6 @@ export default {
   target: 'static',
 
   router: {
-    base: '/mwf-web'
+    base: '/mwf-web/'
   }
 }

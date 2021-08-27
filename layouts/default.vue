@@ -4,15 +4,15 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Manrope:wght@400;800&display=swap" rel="stylesheet">
     <Header />
     <Nuxt />
   </div>
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Manrope:wght@400;800&display=swap');
-
 :root {
   --header: 'Krona One', 'Domine', 'Inter', sans-serif;
 }

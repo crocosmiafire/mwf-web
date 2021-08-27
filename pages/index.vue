@@ -88,8 +88,8 @@ export default {
   data () {
     return {
       imgs: [
-        '/imgs/hosier-lane-front.jpg',
-        '/imgs/flinders-front.jpg'
+        'imgs/hosier-lane-front.jpg',
+        'imgs/flinders-front.jpg'
       ],
       curImg: 0,
       events: [

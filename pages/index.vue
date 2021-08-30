@@ -61,7 +61,7 @@
         </div>
       </div>
     </section>
-    <!-- <section class="about a2">
+    <section class="about a2">
       <div class="lmao">
         <div class="about-wrap">
           <div class="about-inner">
@@ -78,7 +78,7 @@
           <div class="bg-thing" />
         </div>
       </div>
-    </section> -->
+    </section>
     <Footer />
   </div>
 </template>
@@ -94,177 +94,33 @@ export default {
       curImg: 0,
       events: [
         {
-          title: 'An event title',
+          title: 'Photography Workshop',
           time: '09:00',
-          location: 'Somewhere',
+          location: 'Royal Botanic Gardens',
           id: 'evt-1'
         },
         {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
+          title: 'Australian Animals',
+          time: '12:00',
+          location: 'Melbourne Zoo',
           id: 'evt-2'
         },
         {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
+          title: 'History of Melbourne',
+          time: '13:30',
+          location: 'National Gallery of Victoria',
           id: 'evt-3'
         },
         {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
+          title: 'Twilight Market',
+          time: '16:30',
+          location: 'Queen Victoria Market',
           id: 'evt-4'
         },
         {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
-          id: 'evt-5'
-        },
-        {
-          title: 'An event title',
-          time: '09:00',
-          location: 'Somewhere',
+          title: 'MWF Live Performance',
+          time: '20:00',
+          location: 'Sidney Myer Music Bowl',
           id: 'evt-5'
         }
       ],
@@ -333,7 +189,8 @@ export default {
 
   width: 100%;
   max-height: 650px;
-  background-color: white;
+  background-color: black;
+  color: white;
 
   transform: skewY(0deg);
   overflow: hidden;
@@ -343,8 +200,9 @@ export default {
     height: 900px;
     position: relative;
 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'about bgthing';
     align-items: center;
     //transform: skewY(-3deg);
 
@@ -363,19 +221,15 @@ export default {
     }
     .bg-thing-wrap {
       grid-area: bgthing;
-      height: 100%;
       width: 100%;
-      position: relative;
-      z-index: -1;
-      align-self: flex-end;
-      justify-self: end;
-      transform: skewX(-15deg) translateX(100px);
+      height: 100%;
+      transform: skew(-15deg) translate(87px);
       overflow: hidden;
     }
     .bg-thing {
       height: 120%;
       width: 120%;
-      transform: skewX(15deg) translateX(-100px);
+      transform: skewX(15deg) translate(-87px);
       background-image: url('https://www.webjet.com.au/travel/wp-content/uploads/2014/07/Melbourne_at_night.jpg');
       background-size: cover;
       background-position: right;
@@ -396,12 +250,31 @@ export default {
   }
 }
 
+.about::after {
+  content: '';
+  position: absolute;
+  height: 6px;
+  background: linear-gradient(to right, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
 .about.a2 {
   .lmao {
-    flex-direction: row-reverse;
+    grid-template-areas: 'bgthing about';
+
+    .bg-thing-wrap {
+      transform: skew(-15deg) translate(-87px);
+    }
 
     .bg-thing {
-      transform: translateX(100px) skew(15deg);
+      transform: skew(15deg) translate(87px);
+    }
+
+    .about-inner {
+      text-align: right;
+      padding: 0px 70px 0px 10px;
     }
   }
 }
@@ -419,7 +292,11 @@ export default {
   padding: 100px 0px;
 
   transform: skewY(0deg);
-  background: linear-gradient(#262262, #00A79D);
+  //background: linear-gradient(#262262, #00A79D);
+  background: linear-gradient(45deg, #E000FF 20%, #FFFF00 20% 40%, #00D4FF 40% 60%, black 60% 80%, white 80%),linear-gradient(rgba(0,0,0,.25), rgba(0,0,0.25));
+  background-color: black;
+  background-image: url(@/assets/background.svg);
+  background-size: cover;
   color: white;
 
   .schedule-inner {

@@ -21,8 +21,9 @@ export default {
 .card-root {
   min-width: 425px;
   height: 250px;
-  background: white;
-  color: black;
+  background: black;
+  color: white;
+  border: solid 1px white;
   border-radius: 10px;
 
   box-shadow: 0px 2px 10px rgba(0,0,0,.25);
@@ -49,7 +50,7 @@ export default {
     width: 100%;
 
     h1 {
-      font-size: 26px;
+      font-size: 22px;
       font-family: 'Manrope', 'Barlow', 'Inter', sans-serif;
       font-weight: 600;
       margin-bottom: 6px;
@@ -75,7 +76,7 @@ export default {
     height: 100%;
     align-self: center;
     justify-self: center;
-    border: solid white 7px;
+    border: solid black 7px;
     box-sizing: border-box;
     border-radius: 0px 0px 12px 12px;
   }

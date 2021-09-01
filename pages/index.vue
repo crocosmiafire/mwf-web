@@ -257,30 +257,6 @@ export default {
   top: 0;
 }
 
-.about.a2 {
-  .lmao {
-    grid-template-areas: 'bgthing about';
-
-    p {
-      padding-right: 0px;
-      padding-left: 20px;
-    }
-
-    .bg-thing-wrap {
-      transform: skew(-15deg) translate(-87px);
-    }
-
-    .bg-thing {
-      transform: skew(15deg) translate(87px);
-    }
-
-    .about-inner {
-      text-align: right;
-      padding: 0px 70px 0px 10px;
-    }
-  }
-}
-
 .about.a2::after {
   background: linear-gradient(to left, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
 }
@@ -494,6 +470,112 @@ export default {
 
       a:after {
         content: ' >';
+      }
+    }
+  }
+}
+
+/*
+* wahoo mobile stuff
+*/
+
+@media (min-width: 1051px) {
+  .about.a2 {
+    .lmao {
+      grid-template-areas: 'bgthing about';
+
+      p {
+        padding-right: 0px;
+        padding-left: 20px;
+      }
+
+      .bg-thing-wrap {
+        transform: skew(-15deg) translate(-87px);
+      }
+
+      .bg-thing {
+        transform: skew(15deg) translate(87px);
+      }
+
+      .about-inner {
+        text-align: right;
+        padding: 0px 70px 0px 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .header-wrapper {
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 1050px) {
+  .header-wrapper {
+    flex-direction: column;
+
+    .main-logo {
+      width: 300px;
+    }
+
+    .info-header {
+      margin-left: 0px;
+      margin-top: 40px;
+      text-align: center;
+
+      h2 {
+        font-size: 2.35em;
+      }
+    }
+  }
+
+  .schedule {
+    .schedule-inner {
+      h1 {
+        font-size: 2.6em;
+        text-align: center;
+      }
+    }
+  }
+
+  .about {
+    max-height: 800px;
+
+    .lmao {
+      grid-template-columns: none;
+      grid-template-rows: 2fr 1fr;
+      grid-template-areas:
+      'about'
+      'bgthing';
+
+      .about-wrap {
+        transform: skewX(0deg) skewY(-3deg);
+
+        .about-inner {
+          transform: skewX(0deg) skewY(3deg);
+          margin-bottom: 30px;
+          text-align: center;
+          padding: 0px 30px;
+
+          h1 {
+            font-size: 2.5em;
+          }
+
+          p {
+            padding-right: 0px;
+            font-size: 1.1em;
+          }
+        }
+      }
+
+      .bg-thing-wrap {
+        transform: skew(0deg) skewY(-3deg) translate(0px) translateY(-20px);
+        height: 135%;
+
+        .bg-thing {
+          transform: skewX(0deg) skewY(3deg) translateY(-20px);
+        }
       }
     }
   }

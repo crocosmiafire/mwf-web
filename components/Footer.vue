@@ -53,6 +53,7 @@
     align-items: center;
 
     .left {
+      grid-area: left;
       margin-left: 40px;
       margin-bottom: 20px;
       font-size: 0.7em;
@@ -64,6 +65,7 @@
     }
 
     .right {
+      grid-area: right;
       justify-self: right;
       align-self: flex-start;
       margin-right: 50px;
@@ -81,6 +83,43 @@
         .vic {
           width: 100px;
           height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .footer {
+    .content {
+      grid-template-columns: none;
+      grid-template-rows: 2fr 1fr;
+      grid-template-areas:
+      'right'
+      'left';
+      transform: translateY(-25px);
+
+      .left {
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin: 0px 30px;
+        font-size: 0.6em;
+      }
+
+      .right {
+        align-self: center;
+        justify-self: center;
+        margin-bottom: 40px;
+        margin-right: 0px;
+
+        .imgs {
+          .com {
+            width: 120px;
+          }
+
+          .vic {
+            width: 80px;
+          }
         }
       }
     }

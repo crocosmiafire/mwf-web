@@ -3,7 +3,7 @@
     <section class="left">
       <img class="main-logo" src="@/assets/logo-colourful-small.png">
     </section>
-    <section>
+    <section class="normal-links">
       <div class="links">
         <a href="#Schedule">Schedule</a>
         <a href="#Book">Book</a>
@@ -11,6 +11,9 @@
         <a href="#About">About</a>
         <a href="#FAQ">FAQ</a>
       </div>
+    </section>
+    <section class="mobile-links">
+      <i class="material-icons">menu</i>
     </section>
   </div>
 </template>
@@ -111,6 +114,19 @@ export default {
     margin: 0px 10px;
     text-decoration: none;
     color: white;
+  }
+}
+
+.mobile-links {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .normal-links {
+    display: none;
+  }
+  .mobile-links {
+    display: block;
   }
 }
 </style>

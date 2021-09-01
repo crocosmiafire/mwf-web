@@ -40,6 +40,10 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  background: black;
+}
+
 *,
 *::before,
 *::after {

@@ -49,9 +49,8 @@
           <div class="about-inner">
             <h1>The largest festival ever held in Melbourne</h1>
             <p>
-              [PLACEHOLDER TEXT]
               Experience Melbourne like you've never experienced it before.
-              From cafes and restaurants, to the Sidney Myer Music Bowl, everyone is celebrating this
+              From Melbourne Zoo, to the Sidney Myer Music Bowl, everyone is celebrating this
               uniquely wonderful city.
             </p>
           </div>
@@ -65,12 +64,10 @@
       <div class="lmao">
         <div class="about-wrap">
           <div class="about-inner">
-            <h1>The largest festival ever held in Melbourne</h1>
+            <h1>Experience a unique Melbourne</h1>
             <p>
-              [PLACEHOLDER TEXT]
-              Experience Melbourne like you've never experienced it before.
-              From cafes and restaurants, to the Sidney Myer Music Bowl, everyone is celebrating this
-              uniquely wonderful city.
+              Enjoy a wide range of activities and events, like the Royal Botanic Garden's photography workshop,
+              to the Melbourne Winter Festival live performance in the Sidney Myer Music Bowl!
             </p>
           </div>
         </div>
@@ -264,6 +261,11 @@ export default {
   .lmao {
     grid-template-areas: 'bgthing about';
 
+    p {
+      padding-right: 0px;
+      padding-left: 20px;
+    }
+
     .bg-thing-wrap {
       transform: skew(-15deg) translate(-87px);
     }
@@ -279,6 +281,10 @@ export default {
   }
 }
 
+.about.a2::after {
+  background: linear-gradient(to left, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
+}
+
 #poly1 {
   width: 0;
   height: 0;
@@ -292,11 +298,10 @@ export default {
   padding: 100px 0px;
 
   transform: skewY(0deg);
-  //background: linear-gradient(#262262, #00A79D);
-  background: linear-gradient(45deg, #E000FF 20%, #FFFF00 20% 40%, #00D4FF 40% 60%, black 60% 80%, white 80%),linear-gradient(rgba(0,0,0,.25), rgba(0,0,0.25));
   background-color: black;
   background-image: url(@/assets/background.svg);
   background-size: cover;
+  background-position: center;
   color: white;
 
   .schedule-inner {

@@ -1,56 +1,89 @@
 <template>
-  <div class="root">
-    <section class="footer">
-      <div class="inner">
-        <div />
-        <p class="disc">
-          This website is a concept and is not indicative of any real-life events.<br>The City of Melbourne and Victorian Government do not endorse this website.
+  <div class="footer">
+    <div class="content">
+      <div class="left">
+        <p>
+          This website is for educational purposes and is not indicative of any real-life events.<br>
+          The Victorian State Government and City of Melbourne do not endorse this website.
         </p>
-        <div>
-          <img class="com-logo" src="@/assets/com.svg">
-          <img class="com-logo" src="@/assets/vicgov.png">
+      </div>
+      <div class="right">
+        <div class="imgs">
+          <img class="com" src="@/assets/com.svg">
+          <img class="vic" src="@/assets/vicgov.png">
         </div>
       </div>
-    </section>
+    </div>
+    <div class="footer-inner" />
   </div>
 </template>
 
 <style lang="scss" scoped>
-div.root {
-  width: 100%;
-  height: 150px;
-  background: linear-gradient(to left, #262262, #00A79D);
-}
-
 .footer {
   width: 100%;
-  height: 130px;
-  padding: 20px 75px;
-
-  background: linear-gradient(to left, #262262, #00A79D);
+  height: 160px;
   color: white;
 
-  transform: skewY(-4deg) translateY(-65px);
-}
+  transform: translateY(20px);
 
-.inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  transform: skewY(4deg) translateY(40px);
+  .footer-inner {
+    width: 100%;
+    height: 100%;
+    transform: skewY(-3deg) translateY(-90px);
+    background: black;
+  }
 
-  width: 100%;
-}
+  .footer-inner::after {
+    content: '';
+    position: absolute;
+    height: 6px;
+    background: linear-gradient(to right, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
+    right: 0;
+    left: 0;
+    top: 0;
+  }
 
-.disc {
-  position: absolute;
-  margin: 0;
-  font-size: 12px;
-}
+  .content {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
 
-.com-logo {
-  height: 50px;
-  width: auto;
-  margin-left: 50px;
+    .left {
+      margin-left: 40px;
+      margin-bottom: 20px;
+      font-size: 0.7em;
+      opacity: 0.5;
+    }
+
+    .left:hover {
+      opacity: 1;
+    }
+
+    .right {
+      justify-self: right;
+      align-self: flex-start;
+      margin-right: 50px;
+
+      .imgs {
+        display: flex;
+        align-items: center;
+
+        .com {
+          width: 150px;
+          height: auto;
+          margin-right: 40px;
+        }
+
+        .vic {
+          width: 100px;
+          height: auto;
+        }
+      }
+    }
+  }
 }
 </style>

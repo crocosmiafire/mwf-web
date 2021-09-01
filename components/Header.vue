@@ -1,7 +1,7 @@
 <template>
   <div class="header-root" :class="scrollBG">
     <section class="left">
-      <img class="main-logo" src="@/assets/Logo-var2op3.svg">
+      <img class="main-logo" src="@/assets/logo-colourful-small.png">
     </section>
     <section>
       <div class="links">
@@ -66,21 +66,44 @@ export default {
   height: 40px;
   width: auto;
   opacity: 0;
+  filter: brightness(10);
 }
 
 .header-root.scroll {
-  background: white;
-  color: black;
+  background: black;
 
   box-shadow: 0px 1px 5px rgba(0,0,0,.2);
-
-  a {
-    color: black;
-  }
 
   .main-logo {
     opacity: 1;
   }
+}
+
+@keyframes cuteAnimation {
+  0% {
+    background: linear-gradient(to right, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
+  }
+  25% {
+    background: linear-gradient(to right, #FFFF00 25%, #00D4FF 25% 50%, white 50% 75%, #E000FF 75%);
+  }
+  50% {
+    background: linear-gradient(to right, #00D4FF 25%, white 25% 50%, #E000FF 50% 75%, #FFFF00 75%);
+  }
+  75% {
+    background: linear-gradient(to right, white 25%, #E000FF 25% 50%, #FFFF00 50% 75%, #00D4FF 75%);
+  }
+}
+
+.header-root.scroll::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  background: linear-gradient(to right, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
+  right: 0;
+  left: 0;
+  top: 80px;
+
+  animation: cuteAnimation 2s infinite;
 }
 
 .links {

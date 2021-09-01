@@ -50,6 +50,7 @@
     height: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'left right';
     align-items: center;
 
     .left {

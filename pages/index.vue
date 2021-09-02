@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <FakeBook :active="bookThingActive" />
     <section class="header">
       <div class="bg">
         <Background v-for="(item, index) in imgs" :key="index" :cur-img="curImg" :pimg="item" />
@@ -62,7 +63,7 @@
           </div>
         </div>
         <div class="bg-thing-wrap">
-          <div class="bg-thing" style="background-image: url('/imgs/flinders-front.jpg')" />
+          <div class="bg-thing" style="background-image: url('imgs/flinders-front.jpg')" />
         </div>
       </div>
     </section>
@@ -78,7 +79,17 @@
           </div>
         </div>
         <div class="bg-thing-wrap">
-          <div class="bg-thing" style="background-image: url('/imgs/laneway.jpg')" />
+          <div class="bg-thing" style="background-image: url('imgs/laneway.jpg')" />
+        </div>
+      </div>
+    </section>
+    <section class="book">
+      <div class="title">
+        <h1>Book your concert tickets</h1>
+        <p>Ready to jam to the nightly Melbourne Winter Festival live performance? Book your tickets below!</p>
+        <div class="button" @click="showBook">
+          <span>Book tickets</span>
+          <i class="material-icons">open_in_new</i>
         </div>
       </div>
     </section>
@@ -135,7 +146,8 @@ export default {
           id: 'evt-6'
         }
       ],
-      isMouseDown: false
+      isMouseDown: false,
+      bookThingActive: false
     }
   },
   computed: {
@@ -185,6 +197,12 @@ export default {
         left: 465 * toStopAt - 465,
         behavior: 'smooth'
       })
+    },
+    showBook () {
+      this.bookThingActive = true
+    },
+    hideBook () {
+      this.bookThingActive = false
     }
   }
 }
@@ -275,6 +293,16 @@ export default {
   position: absolute;
   height: 6px;
   background: linear-gradient(to right, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.book::after {
+  content: '';
+  position: absolute;
+  height: 6px;
+  background: linear-gradient(to left, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
   right: 0;
   left: 0;
   top: 0;
@@ -518,6 +546,68 @@ export default {
       align-self: center;
       justify-self: center;
     }
+  }
+}
+
+.book {
+  height: 600px;
+  width: 100%;
+  transform: skewY(0deg);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 100px;
+
+    h1 {
+      font-size: 3.5em;
+      font-family: var(--header);
+      letter-spacing: -0.04em;
+      font-weight: normal;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 1.4em;
+    }
+  }
+
+  .button {
+    padding: 15px 20px;
+    border: solid 6px;
+    width: 250px;
+    border-top-color: #E000FF;
+    border-right-color: #FFFF00;
+    border-bottom-color: #00D4FF;
+    border-left-color: white;
+    border-radius: 15px;
+    font-size: 1.4em;
+    margin-top: 50px;
+    cursor: pointer;
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      margin-left: 10px;
+    }
+  }
+
+  .button:hover {
+    background: #ffffff21;
+  }
+
+  .button:active {
+    background: #ffffff21;
+    opacity: 0.5;
   }
 }
 

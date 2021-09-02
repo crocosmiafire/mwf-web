@@ -43,6 +43,12 @@
         </div>
       </div>
     </section>
+    <section id="Maps" class="map">
+      <div class="map-inner">
+        <h1>Event Map</h1>
+        <LeafletMap />
+      </div>
+    </section>
     <section id="About" class="about">
       <div class="lmao">
         <div class="about-wrap">
@@ -56,7 +62,7 @@
           </div>
         </div>
         <div class="bg-thing-wrap">
-          <div class="bg-thing" />
+          <div class="bg-thing" style="background-image: url('/imgs/flinders-front.jpg')" />
         </div>
       </div>
     </section>
@@ -72,7 +78,7 @@
           </div>
         </div>
         <div class="bg-thing-wrap">
-          <div class="bg-thing" />
+          <div class="bg-thing" style="background-image: url('/imgs/laneway.jpg')" />
         </div>
       </div>
     </section>
@@ -86,7 +92,9 @@ export default {
     return {
       imgs: [
         'imgs/hosier-lane-front.jpg',
-        'imgs/flinders-front.jpg'
+        'imgs/colour.jpg',
+        'imgs/arcade.jpg',
+        'imgs/musicbowl.jpg'
       ],
       curImg: 0,
       events: [
@@ -109,16 +117,22 @@ export default {
           id: 'evt-3'
         },
         {
+          title: 'Free MCG Tour',
+          time: '14:45',
+          location: 'Melbourne Cricket Ground',
+          id: 'evt-4'
+        },
+        {
           title: 'Twilight Market',
           time: '16:30',
           location: 'Queen Victoria Market',
-          id: 'evt-4'
+          id: 'evt-5'
         },
         {
           title: 'MWF Live Performance',
           time: '20:00',
           location: 'Sidney Myer Music Bowl',
-          id: 'evt-5'
+          id: 'evt-6'
         }
       ],
       isMouseDown: false
@@ -227,7 +241,6 @@ export default {
       height: 120%;
       width: 120%;
       transform: skewX(15deg) translate(-87px);
-      background-image: url('https://www.webjet.com.au/travel/wp-content/uploads/2014/07/Melbourne_at_night.jpg');
       background-size: cover;
       background-position: right;
     }
@@ -251,6 +264,16 @@ export default {
   content: '';
   position: absolute;
   height: 6px;
+  background: linear-gradient(to left, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.map::after {
+  content: '';
+  position: absolute;
+  height: 6px;
   background: linear-gradient(to right, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
   right: 0;
   left: 0;
@@ -258,7 +281,7 @@ export default {
 }
 
 .about.a2::after {
-  background: linear-gradient(to left, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
+  background: linear-gradient(to right, #E000FF 25%, #FFFF00 25% 50%, #00D4FF 50% 75%, white 75%);
 }
 
 #poly1 {
@@ -471,6 +494,29 @@ export default {
       a:after {
         content: ' >';
       }
+    }
+  }
+}
+
+.map {
+  height: 800px;
+  width: 100%;
+  transform: skewY(0deg);
+
+  .map-inner {
+    display: grid;
+    grid-template-rows: 200px 1fr;
+    color: white;
+    height: 100%;
+    width: 100%;
+
+    h1 {
+      font-size: 3.5em;
+      font-family: var(--header);
+      letter-spacing: -0.04em;
+      font-weight: normal;
+      align-self: center;
+      justify-self: center;
     }
   }
 }

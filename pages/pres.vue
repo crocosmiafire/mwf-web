@@ -1,7 +1,7 @@
 <template>
   <div class="pres-root">
     <img src="imgs/pres.png">
-    <a href="../">
+    <a href="/mwf-web">
       <div class="button">
         <span>Enter Website</span>
       </div>

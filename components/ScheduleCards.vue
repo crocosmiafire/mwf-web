@@ -7,13 +7,20 @@
       </div>
       <span><i class="material-icons">schedule</i> {{ info.time }}</span>
     </div>
-    <div class="evt-image" />
+    <div class="evt-image" :style="img">
+      <a v-if="!info.note.none" :href="info.note.url" target="_blank">{{ info.note.tag }}</a>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['info']
+  props: ['info'],
+  computed: {
+    img () {
+      return `background-image: url('${this.info.img}')`
+    }
+  }
 }
 </script>
 
@@ -68,10 +75,10 @@ export default {
   }
 
   .evt-image {
-    background-image: url('http://theluxtraveller.com/wp-content/uploads/2015/06/Melbourne-at-night.jpg');
+    //background-image: url('http://theluxtraveller.com/wp-content/uploads/2015/06/Melbourne-at-night.jpg');
     background-size: cover;
+    background-position: center;
 
-    background-size: cover;
     width: 100%;
     height: 100%;
     align-self: center;
@@ -79,6 +86,19 @@ export default {
     border: solid black 7px;
     box-sizing: border-box;
     border-radius: 0px 0px 12px 12px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    a {
+      color: white;
+      font-size: 0.7em;
+      padding: 8px 10px;
+      backdrop-filter: blur(10px);
+      background: #00000056;
+      border-radius: 5px 0px 0px 0px;
+    }
   }
 }
 </style>

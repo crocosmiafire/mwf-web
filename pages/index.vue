@@ -93,7 +93,6 @@
         </div>
       </div>
     </section>
-    <Footer />
   </div>
 </template>
 
@@ -113,36 +112,65 @@ export default {
           title: 'Photography Workshop',
           time: '09:00',
           location: 'Royal Botanic Gardens',
+          img: 'imgs/bgardens.jpg',
+          note: {
+            tag: 'City of Melbourne',
+            url: 'https://whatson.melbourne.vic.gov.au/things-to-do/royal-botanic-gardens-victoria'
+          },
           id: 'evt-1'
         },
         {
           title: 'Australian Animals',
           time: '12:00',
           location: 'Melbourne Zoo',
+          img: 'imgs/melbzookoala.jpg',
+          note: {
+            tag: 'City of Melbourne',
+            url: 'https://whatson.melbourne.vic.gov.au/things-to-do/melbourne-zoo'
+          },
           id: 'evt-2'
         },
         {
           title: 'History of Melbourne',
           time: '13:30',
           location: 'National Gallery of Victoria',
+          img: 'imgs/ngv.jpg',
+          note: {
+            tag: 'Visit Victoria',
+            url: 'https://www.visitmelbourne.com/regions/Melbourne/Things-to-do/Art-theatre-and-culture/Art-galleries/NGV-International'
+          },
           id: 'evt-3'
         },
         {
           title: 'Free MCG Tour',
           time: '14:45',
           location: 'Melbourne Cricket Ground',
+          img: 'imgs/mcg.jpg',
+          note: {
+            tag: 'Melbourne Cricket Ground',
+            url: 'https://mcg.org.au/about-us/about-the-mcg'
+          },
           id: 'evt-4'
         },
         {
           title: 'Twilight Market',
           time: '16:30',
           location: 'Queen Victoria Market',
+          img: 'imgs/qvm.jpg',
+          note: {
+            tag: 'Visit Victoria',
+            url: 'https://www.visitvictoria.com/regions/Melbourne/Things-to-do/Shopping/Markets/Queen-Victoria-Market'
+          },
           id: 'evt-5'
         },
         {
           title: 'MWF Live Performance',
           time: '20:00',
           location: 'Sidney Myer Music Bowl',
+          img: 'imgs/musicbowl.jpg',
+          note: {
+            none: true
+          },
           id: 'evt-6'
         }
       ],
@@ -365,7 +393,7 @@ export default {
         position: absolute;
         pointer-events: none;
 
-        display: flex;
+        display: none;
         align-items: center;
 
         i {
@@ -530,6 +558,9 @@ export default {
   height: 800px;
   width: 100%;
   transform: skewY(0deg);
+  background-image: url('@/assets/background-lines.svg');
+  background-position: center;
+  background-size: cover;
 
   .map-inner {
     display: grid;

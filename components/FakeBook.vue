@@ -14,7 +14,7 @@
         <p>
           In case you encountered this site by accident, this is my SAT (School Assessed Task) for
           my VCE Units 3 &amp; 4 (Year 12) Visual Communication Design class. The theme I chose for my SAT was a winter festival
-          held in Melbourne. I decided to create a website for my first presentation shirt design
+          held in Melbourne. I decided to create a website for my first presentation and a shirt design
           for my second. What you're looking at right now is my first presentation!
         </p>
         <br>

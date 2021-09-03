@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Manrope:wght@400;800&display=swap" rel="stylesheet">
     <Header />
     <Nuxt />
+    <Footer />
   </div>
 </template>
 

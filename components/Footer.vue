@@ -105,6 +105,7 @@
         margin-left: 0px;
         margin: 0px 30px;
         font-size: 0.6em;
+        text-align: center;
       }
 
       .right {

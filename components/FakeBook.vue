@@ -113,6 +113,7 @@ export default {
     z-index: 21;
     position: fixed;
     //border: solid 2px var(--bd);
+    overflow: hidden;
 }
 .top {
     height: 60px;
@@ -154,9 +155,13 @@ export default {
 .content {
     width: 100%;
     height: 100%;
+    max-height: 420px;
     transition: 0.25s;
     transition-property: height;
     padding: 25px;
     padding-top: 5px;
+
+    overflow: hidden;
+    overflow-y: auto;
 }
 </style>

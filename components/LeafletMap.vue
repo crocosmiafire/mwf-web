@@ -104,4 +104,10 @@ div.leaflet-container .leaflet-control-attribution {
   color: white !important;
 }
 
+@media (max-width: 1050px) {
+  .map-base {
+    height: 90%
+  }
+}
+
 </style>

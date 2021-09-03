@@ -122,11 +122,21 @@ export default {
 }
 
 @media (max-width: 1050px) {
+  .header-root {
+    padding: 15px 15px;
+    height: 70px;
+  }
+  .header-root.scroll::after {
+    top: 70px;
+  }
   .normal-links {
     display: none;
   }
   .mobile-links {
     display: block;
+  }
+  .main-logo {
+    height: 28px;
   }
 }
 </style>

@@ -101,4 +101,23 @@ export default {
     }
   }
 }
+
+@media (max-width: 1050px) {
+   .card-root {
+     min-width: 290px;
+
+     .card-title {
+       h1 {
+         font-size: 18px;
+         text-align: left;
+       }
+       span {
+         font-size: 12px;
+       }
+       i {
+         font-size: 18px;
+       }
+     }
+   }
+}
 </style>

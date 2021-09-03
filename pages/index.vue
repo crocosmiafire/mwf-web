@@ -23,19 +23,19 @@
     <section id="Schedule" class="schedule">
       <div class="schedule-inner">
         <h1>Upcoming Events</h1>
-        <div class="events-wrapper">
+        <div
+          ref="cards"
+          class="events-wrapper"
+          :style="cursorChange"
+          @mousedown="startDrag"
+          @mousemove="dragging"
+          @pointerup="stopDrag"
+          @mouseleave="stopDrag"
+        >
           <div class="fade left">
             <i class="material-icons">arrow_back_ios</i>
           </div>
-          <div
-            ref="cards"
-            class="cards-container"
-            :style="cursorChange"
-            @mousedown="startDrag"
-            @mousemove="dragging"
-            @pointerup="stopDrag"
-            @mouseleave="stopDrag"
-          >
+          <div class="cards-container">
             <ScheduleCards v-for="item in events" :key="item.id" :info="item" />
           </div>
           <div class="fade right">
@@ -288,7 +288,7 @@ export default {
       width: 120%;
       transform: skewX(15deg) translate(-87px);
       background-size: cover;
-      background-position: right;
+      background-position: center;
     }
     h1 {
       font-family: var(--header);
@@ -348,9 +348,7 @@ export default {
 .schedule {
   z-index: 1;
 
-  width: 100%;
-
-  padding: 100px 0px;
+  height: 500px;
 
   transform: skewY(0deg);
   background-color: black;
@@ -360,31 +358,31 @@ export default {
   color: white;
 
   .schedule-inner {
-    width: 100%;
-    height: 350px;
-
     //transform: skewY(-3deg);
 
     clip-path: url(#poly2clip);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 200px 1fr;
 
     h1 {
       font-size: 3.5em;
       font-family: var(--header);
       letter-spacing: -0.04em;
       font-weight: normal;
+      align-self: center;
+      justify-self: center;
     }
 
     .events-wrapper {
       display: flex;
-      width: 100%;
       height: 100%;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+      overflow-x: auto;
+      cursor: grab;
+      padding-bottom: 40px;
 
       .fade {
         width: 100px;
@@ -424,40 +422,32 @@ export default {
 
       .cards-container {
         padding: 0px 20px;
-        margin-top: 60px;
-        padding-bottom: 40px;
 
         display: flex;
 
         //align-items: center;
         justify-content: flex-start;
 
-        overflow: hidden;
-        overflow-x: auto;
-
         width: 100%;
-        cursor: grab;
-
       }
+    }
+    .events-wrapper::-webkit-scrollbar {
+      background: transparent;
+      height: 10px;
+      display: none;
+    }
 
-      .cards-container::-webkit-scrollbar {
-        background: transparent;
-        height: 10px;
-        display: none;
-      }
+    .events-wrapper::-webkit-scrollbar-thumb {
+      background: #ffffff8e;
+      border-radius: 20px;
+    }
 
-      .cards-container::-webkit-scrollbar-thumb {
-        background: #ffffff8e;
-        border-radius: 20px;
-      }
+    .events-wrapper:hover::-webkit-scrollbar {
+      display: block;
+    }
 
-      .cards-container:hover::-webkit-scrollbar {
-        display: block;
-      }
-
-      .cards-container:hover {
-        padding-bottom: 30px;
-      }
+    .events-wrapper:hover {
+      padding-bottom: 30px;
     }
   }
 }
@@ -576,6 +566,7 @@ export default {
       font-weight: normal;
       align-self: center;
       justify-self: center;
+      text-align: center;
     }
   }
 }
@@ -674,7 +665,7 @@ export default {
 
 @media (max-width: 1250px) {
   .header-wrapper {
-    padding: 0 5%;
+    padding: 0 8%;
   }
 }
 
@@ -683,7 +674,7 @@ export default {
     flex-direction: column;
 
     .main-logo {
-      width: 300px;
+      width: 280px;
     }
 
     .info-header {
@@ -692,7 +683,15 @@ export default {
       text-align: center;
 
       h2 {
-        font-size: 2.35em;
+        font-size: 2em;
+      }
+
+      .instant-nav-btns {
+        .nav-btn {
+          a {
+            font-size: 1.25em;
+          }
+        }
       }
     }
   }
@@ -702,6 +701,46 @@ export default {
       h1 {
         font-size: 2.6em;
         text-align: center;
+      }
+
+      .events-wrapper {
+        padding-right: 10px;
+
+        .cards-container {
+          padding: 0px;
+        }
+      }
+    }
+  }
+
+  .map {
+    height: 600px;
+
+    .map-inner {
+      grid-template-rows: 150px 1fr;
+
+      h1 {
+        font-size: 2.6em;
+      }
+    }
+  }
+
+  .book {
+    height: 550px;
+
+    .title {
+      h1 {
+        font-size: 2.4em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      .button {
+        font-size: 1.1em;
+        padding: 15px 20px;
+        width: 200px;
       }
     }
   }
@@ -726,12 +765,12 @@ export default {
           padding: 0px 30px;
 
           h1 {
-            font-size: 2.5em;
+            font-size: 2.25em;
           }
 
           p {
             padding-right: 0px;
-            font-size: 1.1em;
+            font-size: 1em;
           }
         }
       }

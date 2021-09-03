@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/pres", {data:[{}],fetch:{},mutations:void 0});
